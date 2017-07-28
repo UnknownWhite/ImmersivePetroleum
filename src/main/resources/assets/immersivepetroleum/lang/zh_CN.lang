@@ -1,27 +1,71 @@
 tile.immersivepetroleum.fluid_diesel.name=柴油
 tile.immersivepetroleum.fluid_crude_oil.name=原油
+tile.immersivepetroleum.fluid_lubricant.name=润滑油
+tile.immersivepetroleum.fluid_gasoline.name=汽油
 
 tile.immersivepetroleum.stone_decoration.asphalt.name=沥青混凝土
 
+tile.immersivepetroleum.metal_device.automatic_lubricator.name=自动注油器
+tile.immersivepetroleum.metal_device.gas_generator.name=便携式发电机
+
+tile.immersivepetroleum.metal_multiblock.pumpjack.name=采油机
+tile.immersivepetroleum.metal_multiblock.distillation_tower.name=精馏塔
+tile.immersivepetroleum.metal_multiblock.pumpjack_parent.name=采油机
+tile.immersivepetroleum.metal_multiblock.distillation_tower_parent.name=精馏塔
+
 chat.immersivepetroleum.info.coresample.oil=%s mB 原油
 chat.immersivepetroleum.info.coresample.noOil=没有原油
+chat.immersivepetroleum.info.coresample.oilRep=Up to %d mB/tick of trace %s
+chat.immersivepetroleum.info.schematic.noMultiblock=与工程师手册一起合成
+chat.immersivepetroleum.info.schematic.build0=显示指令
+chat.immersivepetroleum.info.schematic.build1=制作一个 %s
+chat.immersivepetroleum.info.schematic.center=中心在 (%d, %d, %d)
+chat.immersivepetroleum.info.schematic.controls=%s 旋转, %s + %s 反转
 
 fluid.diesel=柴油
 fluid.oil=原油
+fluid.lubricant=润滑油
+fluid.gasoline=汽油
 
 item.immersivepetroleum.material.bitumen.name=沥青
 item.immersivepetroleum.material.petcoke.name=石油焦
+item.immersivepetroleum.upgrades.reinforced_hull.name=强化船体
+item.immersivepetroleum.upgrades.icebreaker.name=破冰船首
+item.immersivepetroleum.upgrades.tank.name=扩展油箱
+item.immersivepetroleum.upgrades.rudders.name=机动船舵
+
+item.immersivepetroleum.schematic.name=%s 投影仪
+
+item.immersivepetroleum.speedboat.name=摩托艇
+
+item.immersivepetroleum.oil_can.name=润滑油罐
 
 # itemGroup.immersivepetroleum=Immersive Petroleum
 
 # ie.manual.entry.blank_text=
 
 desc.immersiveengineering.info.multiblock.IP:DistillationTower=精馏塔
+desc.immersiveengineering.info.multiblock.IP:Pumpjack=采油机
+
+desc.immersiveengineering.info.multiblock.IE:AutoWorkbench=自动工作台
+desc.immersiveengineering.info.multiblock.IE:AlloySmelter=合金冶炼
+
+desc.immersivepetroleum.info.reservoir.oil=油藏
+desc.immersivepetroleum.info.reservoir.aquifer=含水层
+desc.immersivepetroleum.info.reservoir.lava=岩浆层
+
+desc.immersivepetroleum.flavour.upgrades.reinforced_hull=使摩托艇防火并增加其耐久值
+desc.immersivepetroleum.flavour.upgrades.icebreaker=允许摩托艇破冰并对怪物造成伤害
+desc.immersivepetroleum.flavour.upgrades.tank=增加了摩托艇的油箱容量
+desc.immersivepetroleum.flavour.upgrades.rudders=允许摩托艇进行急转弯
+
+
 
 ie.manual.entry.distillationTower.name=精馏塔
 ie.manual.entry.distillationTower.subtext=环境不友好
 ie.manual.entry.distillationTower0=精馏塔是能将石油分馏成若干种产品的大型多方块设备。其结构如下图所示；需要用工程师锤敲击红石工程块完成建造。<br><br>原油可从其后面带有蓝点的输入端输入。原油在塔中会被加热，最终分成若干层不同的产物。这个过程会产出柴油，以及作为副产物存在的沥青。
 ie.manual.entry.distillationTower1=精馏塔每次运行会消耗<config;i;distillationTower_operationCost> Flux，每刻最多将 25 mB 原油转化为柴油。柴油会从侧面带有橙色点标记的输出端输出；副产物沥青则从正面输出。这些产物分别可用于 <link;dieselgen;§o§n柴油发电机§r>和<link;asphalt;§o§n沥青混凝土的制造§r>。<br><br>给予控制面板红石信号可令其暂停工作；此效果可用工程师锤反转。
+ie.manual.entry.distillationTower2=下面是精馏塔可以执行的操作:
 
 ie.manual.entry.pumpjack.name=采油机
 ie.manual.entry.pumpjack.subtext=Pump, pump it up
@@ -32,9 +76,49 @@ ie.manual.entry.oil.name=油藏
 ie.manual.entry.oil.subtext=黑金
 ie.manual.entry.oil0=你在基岩层附近挖矿时，偶然注意到了一些粘稠的黑色可燃物质。你提出了“那层不可破坏的岩层下还有更多石油储藏”的假设，但很明显，你已无法钻探到更深的地方了。但在<link;pumpjack;§o§n特殊设计的设备§r>的帮助下，你最终终于触碰到了哪些宝贵的燃料来源。
 ie.manual.entry.oil1=<link;minerals;§o§n岩芯钻井§r>可以探明某区块内是否有石油储藏及具体储量。<br><br>尽管油田会枯竭，采油机仍能从枯竭的油田中抽出少量石油（最多 <config;i;oil_replenish> mB/t）。需要注意的是，用多台采油机并不能提高枯竭的油田的产量。
+ie.manual.entry.oil2=%1$s %6$s<br>它包含 %3$s 到 %4$s mB 的 %2$s.%5$s
+ie.manual.entry.oilConsonant=A
+ie.manual.entry.oilVowel=An
+ie.manual.entry.oilDimValid=%3$s §l%1$s§r 是能在 %2$s 找到的一种流体储层.
+ie.manual.entry.oilDimInvalid=%3$s §l%1$s§r 是一种可以在任何地方找到的流体储层但在 %2$s.
+ie.manual.entry.oilDimAny=%2$s §l%1$s§r 是一种可以在任何维度发现的流体储层.
+ie.manual.entry.oilReplenish=<br>在储层枯竭后, %1$d mB/tick of trace %2$s 每个单独的柴油机可以提取.
+ie.manual.entry.oilBiomeValid=这个储层将会生成在 %s.
+ie.manual.entry.oilBiomeInvalid=这个储层将会生成在任何群系除了 %s.
+ie.manual.entry.oilBiomeAny=这个储层将会生成在任何群系.
 
 ie.manual.entry.asphalt.name=沥青混凝土
 ie.manual.entry.asphalt.subtext=高速公路
 ie.manual.entry.asphalt0=沥青混凝土，顾名思义，是掺有粘稠的沥青的混凝土，也因此其颜色比普通混凝土更深。它本身可作为<link;distillationTower;§n§o精馏塔§r>处理原油时的副产物出现。
+
+ie.manual.entry.schematics.name=多方块结构投影仪
+ie.manual.entry.schematics.subtext=宝贵的指导
+ie.manual.entry.schematics0=当涉及到建造大型多方块结构, 一次又一次地查阅你的工程师手册变得乏味. 通过制作一个简单的投影仪设备, 你相信你能投射一个这些多方块结构的结构示意图在世界中来作为一个模板.
+ie.manual.entry.schematics1=若你把你的工程师手册翻到一个多方块结构的页面然后将它和一个投影仪放在工作台中合成, 你就能将手册中的结构图复制到投影仪中. 投影仪将作为三维建筑指南.
+ie.manual.entry.schematics2=持有一个投影仪将显示结构. 按下选择方块的按钮将旋转结构, 在潜行时这样做将反转结构. 右键会将结构图锁在原地, 并且只要你的投影仪在你的快捷栏中,就会显示结构图.<br><br>拿着投影仪潜行右键一个锁住的结构图将解锁结构图.<br><br>在创造模式下,拿着投影仪潜行右键将自动建造一个多方块结构.
+
+ie.manual.entry.speedboat.name=摩托艇
+ie.manual.entry.speedboat.subtext=弄潮儿
+ie.manual.entry.speedboat0=在高速摩托艇的帮助下,你现在可以在海上旅行. 摩托艇依靠 <link;distillationTower;§n§oGasoline§r> 或 <link;jerrycan;§n§oJerrycan§r> 运行,它们可以用桶来添加 . 汽油将在驾驶摩托艇向前和向后的时候被消耗 . 按住跳跃键将提高摩托艇的速度, 尽管会消耗更多的燃料并增加转弯的半径.
+ie.manual.entry.speedboat1=就像其他的设备, 摩托艇可以通过 <link;workbench;§o§nEngineer's §o§nWorkbench§r> 来修改.<br><br>这个 §6Expanded Fuel Tank§r 可以让摩托艇承载两倍的油量.
+ie.manual.entry.speedboat2=一套 §6Manuevering Rudders§r 给予摩托艇更快的转向的能力, 大大地改善了操作. 用这个升级, 船的转弯半径将会深刻地缩短.
+ie.manual.entry.speedboat3=使用 §6Icebreaker Bow§r 寒冷群系的航行将变得微不足道, 它允许摩托艇破开冰块. 除了这些关于机动性的好处, 这个船首让船在运行的时候伤害怪物.
+ie.manual.entry.speedboat4=如果你想探索领域之外的世界, 或者仅仅是希望让你的摩托艇有更强的抵抗力, 考虑一下换一个 §6Reinforced Hull§r. 钢制船体不仅增加了船的耐久而且还让船变得抗火, 可以航行在下界巨大的岩浆湖上.
+
+ie.manual.entry.lubricant.name=润滑油
+ie.manual.entry.lubricant.subtext=滑啊滑
+ie.manual.entry.lubricant0=任何人的机器都不是完美的, 即使是你的. 移动部件之间不可避免的摩擦使你的机器无法以最高效率工作 - 这就是润滑剂所需要的原因. 它将确保机器以最高效率运行, <config;d;autoLubricant_speedup>x 它的基础速度. <link;pumpjack;§n§oPumpjacks§r>, <link;excavator;§n§oExcavators§r>, 和 <link;crusher;§n§oCrushers§r> 都可以被润滑.
+ie.manual.entry.lubricant1=润滑油罐可以被用来手动润滑一台机器. 石油润滑剂是最有效的, 但 <link;squeezer;§n§oPlant Oil§r> 也可以用. 一旦润滑罐被充满, 只需右键一个有效的方块来润滑. 当它被加速, 机器会明显的发出滴水声.
+ie.manual.entry.lubricant2=铁傀儡也可能被润滑, 这将治疗他们并暂时地增加他们的速度和力量.<br><br>一个 <link;chemthrower;§o§nChemical §o§nThrower§r> 也可以用来润滑方块, 尽管不那么有效. 只要有效的润滑剂喷到一台机器上,它就会开始全速运转.
+
+ie.manual.entry.automaticLubricator.name=自动润滑器
+ie.manual.entry.automaticLubricator.subtext=释放双手
+ie.manual.entry.automaticLubricator0=手动添加 <link;distillationTower;§n§oLubricant§r> 到机器里使人疲累而且常常使人沮丧. 自动润滑器将会为你完成这个任务当其附加到一台机器上. 突出显示的点必须附在你润滑的地方.
+ie.manual.entry.automaticLubricator1=当其被正确放置, 润滑管道将会在机器周围形成. 此时, 只需要供应石油润滑剂或 <link;squeezer;§n§oPlant Oil§r>.
+
+ie.manual.entry.portableGenerator.name=便携式发电机
+ie.manual.entry.portableGenerator.subtext=加汽油
+ie.manual.entry.portableGenerator0=便携式发电机是一个移动电源的解决方案. 这个 <link;distillationTower;§n§oGasoline§r> 推动内燃发电机能产生 <config;i;portableGenerator_flux> Flux/t 当发电机运行时, 并拥有 100,000 RF 的缓存区.
+ie.manual.entry.portableGenerator1=拿着一桶燃料右键便携式发电机可以为其添加燃料. 汽油和其他燃料也可以通过上方的管道输入. 电力直接通过低压或高压电线输出, 不需要连接器. 给予红石信号将停止发电.<br><br>潜行右键便携式发电机可以将其捡起, 并保存其储存的所有电力和燃料.
 
 ie.manual.category.ip.name=原油处理
